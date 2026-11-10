@@ -315,19 +315,22 @@ section{ padding:clamp(80px,12vh,136px) 0; position:relative; }
 .servicios{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 .servicio{
   background:var(--crema-50); border:1px solid var(--crema-300); border-radius:var(--radio-md);
-  padding:clamp(28px,3vw,40px); display:flex; flex-direction:column; gap:16px;
+  --pad:clamp(28px,3vw,40px); padding:var(--pad); overflow:hidden; display:flex; flex-direction:column; gap:16px;
   transition:border-color .4s ease, box-shadow .5s var(--ease), transform .5s var(--ease);
 }
 .servicio:hover{ border-color:var(--crema-400); transform:translateY(-4px); box-shadow:0 34px 60px -44px rgba(44,53,43,.4); }
 @supports (grid-template-rows:subgrid){
   @media (min-width:961px){
-    .servicio{ display:grid; grid-row:span 5; grid-template-rows:subgrid; row-gap:16px; }
+    .servicio{ display:grid; grid-row:span 6; grid-template-rows:subgrid; row-gap:16px; }
   }
 }
 .servicio__icono{
   width:52px; height:52px; border-radius:50%; border:1px solid var(--crema-400); color:var(--oliva-700);
   display:flex; align-items:center; justify-content:center; margin-bottom:10px;
 }
+.servicio__foto{ margin:calc(-1 * var(--pad)) calc(-1 * var(--pad)) 8px; aspect-ratio:16/10; overflow:hidden; background:var(--crema-200); }
+.servicio__foto img{ width:100%; height:100%; object-fit:cover; transition:transform .8s var(--ease); }
+.servicio:hover .servicio__foto img{ transform:scale(1.05); }
 .servicio h3{ font-size:1.6rem; }
 .servicio__lead{ font-family:var(--serif); font-style:italic; color:var(--oliva-700); font-size:1.12rem; line-height:1.4; }
 .servicio p.servicio__cuerpo{ color:var(--gris); font-size:.93rem; }
@@ -336,57 +339,6 @@ section{ padding:clamp(80px,12vh,136px) 0; position:relative; }
 .servicio li .icono{ width:15px; height:15px; margin-top:4px; color:var(--oliva-700); }
 @media (max-width:960px){ .servicios{ grid-template-columns:1fr; max-width:620px; margin-inline:auto; } }
 
-/* ======================================================================
-   10) PROYECTOS CON FOTOS REALES
-   ====================================================================== */
-.proyectos{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-.proyecto{
-  background:var(--crema-50); border:1px solid var(--crema-300); border-radius:var(--radio-md); overflow:hidden;
-  display:flex; flex-direction:column; gap:12px; padding-bottom:28px;
-  transition:border-color .4s ease, box-shadow .5s var(--ease), transform .5s var(--ease);
-}
-.proyecto:hover{ border-color:var(--crema-400); transform:translateY(-4px); box-shadow:0 34px 60px -44px rgba(44,53,43,.4); }
-.proyecto > :not(.proyecto__lienzo){ margin-inline:28px; }
-@supports (grid-template-rows:subgrid){
-  @media (min-width:961px){
-    .proyecto{ display:grid; grid-row:span 4; grid-template-rows:subgrid; row-gap:12px; }
-  }
-}
-.proyecto__lienzo{
-  aspect-ratio:4/3; position:relative; overflow:hidden; margin-bottom:14px;
-  background:var(--crema-200);
-}
-.proyecto__lienzo img{
-  width:100%; height:100%; object-fit:cover; transition:transform 0.8s var(--ease);
-}
-.proyecto:hover .proyecto__lienzo img{ transform:scale(1.05); }
-
-.proyecto__etiqueta{
-  position:absolute; top:16px; left:16px; z-index:2;
-  background:rgba(251,249,245,.92); border:1px solid var(--crema-300); color:var(--oliva-900);
-  font-size:.6rem; font-weight:400; letter-spacing:.16em; text-transform:uppercase; padding:6px 12px; border-radius:var(--radio-full);
-}
-.proyecto h3{ font-size:1.45rem; }
-.proyecto p{ font-size:.92rem; color:var(--gris); flex:1; }
-.proyecto__enlace{
-  display:inline-flex; align-items:center; gap:10px; justify-self:start; align-self:flex-start; margin-top:6px;
-  font-size:.7rem; font-weight:400; letter-spacing:.16em; text-transform:uppercase; color:var(--oliva-900);
-  background:none; border:none; border-bottom:1px solid var(--crema-400); cursor:pointer; padding:0 0 6px;
-  transition:border-color .3s ease, color .3s ease;
-}
-.proyecto__enlace:hover{ border-color:var(--oliva-900); }
-.proyecto__enlace .icono{ width:15px; height:15px; transition:transform .35s var(--ease); }
-.proyecto__enlace:hover .icono{ transform:translateX(3px); }
-@media (max-width:960px){ .proyectos{ grid-template-columns:1fr; max-width:620px; margin-inline:auto; } }
-
-.modal{ position:fixed; inset:0; background:rgba(34,36,32,.5); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); z-index:100; display:none; align-items:center; justify-content:center; padding:20px; }
-.modal.abierto{ display:flex; animation:fundido .3s ease; }
-.modal__tarjeta{ background:var(--crema-50); border-radius:var(--radio-lg); max-width:500px; width:100%; padding:clamp(28px,5vw,44px); position:relative; box-shadow:0 40px 80px -30px rgba(0,0,0,.4); animation:subir .5s var(--ease); }
-.modal__cerrar{ position:absolute; top:14px; right:14px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; background:none; border:none; border-radius:50%; cursor:pointer; color:var(--gris); transition:background .25s ease, color .25s ease; }
-.modal__cerrar:hover{ color:var(--charcoal); background:var(--crema-200); }
-.modal__tarjeta .ojo{ margin-bottom:12px; }
-.modal__tarjeta h3{ font-size:1.9rem; margin-bottom:14px; padding-right:32px; }
-.modal__tarjeta p:not(.ojo){ color:var(--gris); font-size:.95rem; margin-bottom:28px; }
 @keyframes fundido{ from{ opacity:0; } to{ opacity:1; } }
 @keyframes subir{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:none; } }
 
@@ -556,7 +508,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
 @media (max-width:480px){ .pie{ grid-template-columns:1fr; } }
 
 @media print{
-  .acuarela, .grano, .cabecera, .modal, .hero__visual{ display:none !important; }
+  .acuarela, .grano, .cabecera, .hero__visual{ display:none !important; }
   .js .revelar{ opacity:1 !important; }
 }
 </style>
@@ -619,7 +571,6 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     <nav class="nav__enlaces" aria-label="Principal">
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#servicios">Servicios</a>
-      <a href="#proyectos">Proyectos</a>
       <a href="#testimonios">Testimonios</a>
       <a href="#faq">FAQ</a>
       <a href="#reservar" class="boton">Reservar consulta</a>
@@ -635,9 +586,8 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     <div class="contenedor drawer__dentro">
       <a href="#sobre-mi">Sobre Mí <small>01</small></a>
       <a href="#servicios">Servicios <small>02</small></a>
-      <a href="#proyectos">Proyectos <small>03</small></a>
-      <a href="#testimonios">Testimonios <small>04</small></a>
-      <a href="#faq">Preguntas frecuentes <small>05</small></a>
+      <a href="#testimonios">Testimonios <small>03</small></a>
+      <a href="#faq">Preguntas frecuentes <small>04</small></a>
       <a href="#reservar" class="boton">Reservar consulta</a>
       <a href="https://wa.me/34868353668" class="boton boton--linea" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg> WhatsApp +34 868 35 36 68</a>
     </div>
@@ -701,7 +651,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
   </div>
 </section>
 
-<section id="servicios">
+<section id="servicios" class="sec--tintada">
   <div class="contenedor">
     <div class="sec__cabecera revelar">
       <div class="sec__indice"><span class="sec__num">01</span><p class="ojo">Lo que hago</p></div>
@@ -712,6 +662,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
 
     <div class="servicios">
       <article class="servicio revelar">
+        <div class="servicio__foto"><img src="escritorio-web.jpg" alt="Escritorio con una web en desarrollo en pantalla" loading="lazy"></div>
         <div class="servicio__icono"><svg class="icono" aria-hidden="true"><use href="#i-code"/></svg></div>
         <h3>Desarrollo Web</h3>
         <p class="servicio__lead">Una web que trabaja mientras tú duermes.</p>
@@ -724,6 +675,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
       </article>
 
       <article class="servicio revelar" style="--retardo:.12s">
+        <div class="servicio__foto"><img src="valentini-laptop.jpg" alt="Valentini trabajando con portátil y tablet" loading="lazy"></div>
         <div class="servicio__icono"><svg class="icono" aria-hidden="true"><use href="#i-cpu"/></svg></div>
         <h3>Sistemas para Empresas</h3>
         <p class="servicio__lead">Menos tareas repetitivas, más tiempo para tu negocio.</p>
@@ -736,6 +688,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
       </article>
 
       <article class="servicio revelar" style="--retardo:.24s">
+        <div class="servicio__foto"><img src="mesa-te.jpg" alt="Mesa de trabajo con tablet, móvil y una taza de té" loading="lazy"></div>
         <div class="servicio__icono"><svg class="icono" aria-hidden="true"><use href="#i-target"/></svg></div>
         <h3>Marketing &amp; Comercial</h3>
         <p class="servicio__lead">Tráfico que cualifica, no que entretiene.</p>
@@ -750,62 +703,11 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
   </div>
 </section>
 
-<!-- GALERÍA DE PROYECTOS CON FOTOGRAFÍAS REALES DEL ESTUDIO -->
-<section id="proyectos" class="sec--tintada">
-  <div class="contenedor">
-    <div class="sec__cabecera revelar">
-      <div class="sec__indice"><span class="sec__num">02</span><p class="ojo">Casos de estudio</p></div>
-      <div class="sec__titulos">
-        <h2>Proyectos y Casos Reales</h2>
-        <p>Cada proyecto empieza con una conversación sobre el negocio, el diseño y la tecnología necesaria.</p>
-      </div>
-    </div>
-
-    <div class="proyectos">
-      <article class="proyecto revelar">
-        <div class="proyecto__lienzo">
-          <span class="proyecto__etiqueta">Desarrollo &amp; IA</span>
-          <img src="escritorio-web.jpg" alt="Escritorio con una web en desarrollo en pantalla" loading="lazy">
-        </div>
-        <h3>Optimización de Presupuestos &amp; Web</h3>
-        <p>Redujimos en un 40% el tiempo de gestión de presupuestos integrando una landing optimizada con flujos de IA.</p>
-        <button type="button" class="proyecto__enlace" data-modal-titulo="Desarrollo &amp; IA" data-modal-categoria="Plataforma Web + Automatización" data-modal-desc="Rediseño web completo e integración de sistema automatizado de atención y filtrado mediante IA.">
-          Ver proyecto <svg class="icono" aria-hidden="true"><use href="#i-arrow"/></svg>
-        </button>
-      </article>
-
-      <article class="proyecto revelar" style="--retardo:.12s">
-        <div class="proyecto__lienzo">
-          <span class="proyecto__etiqueta">Marketing &amp; Comercial</span>
-          <img src="mesa-te.jpg" alt="Mesa de trabajo con tablet, móvil y una taza de té" loading="lazy">
-        </div>
-        <h3>Estrategia de Captación &amp; Ads</h3>
-        <p>Embudo de alta conversión en Meta &amp; LinkedIn con formulario calificador, aumentando los leads válidos en un 65%.</p>
-        <button type="button" class="proyecto__enlace" data-modal-titulo="Marketing &amp; Comercial" data-modal-categoria="Campañas &amp; Funnel Calificado" data-modal-desc="Creación de sistema de captación pagada enfocado exclusivamente en clientes con presupuesto calificado.">
-          Ver proyecto <svg class="icono" aria-hidden="true"><use href="#i-arrow"/></svg>
-        </button>
-      </article>
-
-      <article class="proyecto revelar" style="--retardo:.24s">
-        <div class="proyecto__lienzo">
-          <span class="proyecto__etiqueta">Dirección de Arte</span>
-          <img src="valentini-laptop.jpg" alt="Valentini revisando una identidad visual en el portátil" loading="lazy">
-        </div>
-        <h3>Identidad Visual &amp; Digital</h3>
-        <p>Rediseño integral de marca con estética artesanal sofisticada y adaptación multicanal digital y física.</p>
-        <button type="button" class="proyecto__enlace" data-modal-titulo="Dirección de Arte" data-modal-categoria="Branding &amp; Sensibilidad Artística" data-modal-desc="Proyecto de identidad visual completa con producción artesanal y guías estéticas de alto nivel.">
-          Ver proyecto <svg class="icono" aria-hidden="true"><use href="#i-arrow"/></svg>
-        </button>
-      </article>
-    </div>
-  </div>
-</section>
-
 <!-- TESTIMONIOS Y PRESENCIA EN EVENTOS / CONFERENCIAS -->
 <section id="testimonios">
   <div class="contenedor">
     <div class="sec__cabecera revelar">
-      <div class="sec__indice"><span class="sec__num">03</span><p class="ojo">Trayectoria &amp; Opiniones</p></div>
+      <div class="sec__indice"><span class="sec__num">02</span><p class="ojo">Trayectoria &amp; Opiniones</p></div>
       <div class="sec__titulos">
         <h2>Confianza que se construye con resultados</h2>
       </div>
@@ -881,7 +783,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
 <section id="faq">
   <div class="contenedor faq-layout">
     <div class="faq__aside revelar">
-      <div class="sec__indice sec__indice--fila"><span class="sec__num">04</span><p class="ojo">Preguntas frecuentes</p></div>
+      <div class="sec__indice sec__indice--fila"><span class="sec__num">03</span><p class="ojo">Preguntas frecuentes</p></div>
       <h2 class="sec__h2">Lo que todo el mundo pregunta</h2>
       <p>¿Te queda alguna duda? Escríbeme a <a href="mailto:parismimi888@gmail.com">parismimi888@gmail.com</a> y te respondo personalmente.</p>
     </div>
@@ -918,7 +820,6 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
         <ul>
           <li><a href="#sobre-mi">Sobre mí</a></li>
           <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
           <li><a href="#testimonios">Testimonios</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
         </ul>
@@ -939,16 +840,6 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     </div>
   </div>
 </footer>
-
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
-  <div class="modal__tarjeta">
-    <button type="button" class="modal__cerrar" id="modal-cerrar" aria-label="Cerrar"><svg class="icono" aria-hidden="true"><use href="#i-close"/></svg></button>
-    <p class="ojo" id="modal-categoria"></p>
-    <h3 id="modal-titulo"></h3>
-    <p id="modal-desc"></p>
-    <button type="button" class="boton" id="modal-cerrar-2">Cerrar</button>
-  </div>
-</div>
 
 <script>
 (function(){
@@ -1086,41 +977,9 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     });
   });
 
-  // Modal de proyectos
-  var modal = document.getElementById('modal');
-  var modalCerrar = document.getElementById('modal-cerrar');
-  var ultimoFoco = null;
-  document.querySelectorAll('.proyecto__enlace').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      document.getElementById('modal-titulo').textContent = btn.dataset.modalTitulo;
-      document.getElementById('modal-categoria').textContent = btn.dataset.modalCategoria;
-      document.getElementById('modal-desc').textContent = btn.dataset.modalDesc;
-      ultimoFoco = btn;
-      modal.classList.add('abierto');
-      raiz.style.overflow = 'hidden';
-      modalCerrar.focus();
-    });
-  });
-  function cerrarModal(){
-    if (!modal.classList.contains('abierto')) return;
-    modal.classList.remove('abierto');
-    raiz.style.overflow = '';
-    if (ultimoFoco) ultimoFoco.focus();
-  }
-  modalCerrar.addEventListener('click', cerrarModal);
-  document.getElementById('modal-cerrar-2').addEventListener('click', cerrarModal);
-  modal.addEventListener('click', function(e){ if (e.target === modal) cerrarModal(); });
-
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape'){
-      if (modal.classList.contains('abierto')){ cerrarModal(); }
-      else if (drawer.classList.contains('abierto')){ abrirMenu(false); menuBtn.focus(); }
-    }
-    if (e.key === 'Tab' && modal.classList.contains('abierto')){
-      var focos = modal.querySelectorAll('button');
-      var primero = focos[0], ultimo = focos[focos.length - 1];
-      if (e.shiftKey && document.activeElement === primero){ e.preventDefault(); ultimo.focus(); }
-      else if (!e.shiftKey && document.activeElement === ultimo){ e.preventDefault(); primero.focus(); }
+      if (drawer.classList.contains('abierto')){ abrirMenu(false); menuBtn.focus(); }
     }
   });
 
