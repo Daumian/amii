@@ -308,15 +308,6 @@ section{ padding:clamp(80px,12vh,136px) 0; position:relative; }
 /* ======================================================================
    7) ENFOQUE — principios numerados
    ====================================================================== */
-.pilares{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(28px,4vw,56px); }
-.pilar{ border-top:1px solid var(--crema-400); padding-top:30px; }
-.pilar__num{
-  display:block; font-family:var(--serif); font-weight:300; font-size:3.4rem; line-height:1; color:var(--arcilla);
-  font-variant-numeric:lining-nums; margin-bottom:30px;
-}
-.pilar h3{ font-size:1.6rem; margin-bottom:12px; }
-.pilar p{ color:var(--gris); font-size:.95rem; max-width:36ch; }
-@media (max-width:820px){ .pilares{ grid-template-columns:1fr; } .pilar__num{ font-size:2.8rem; margin-bottom:20px; } }
 
 /* ======================================================================
    8) SERVICIOS
@@ -627,7 +618,6 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
 
     <nav class="nav__enlaces" aria-label="Principal">
       <a href="#sobre-mi">Sobre mí</a>
-      <a href="#enfoque">Enfoque</a>
       <a href="#servicios">Servicios</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#testimonios">Testimonios</a>
@@ -644,11 +634,10 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
   <nav class="drawer" id="drawer" aria-label="Menú móvil">
     <div class="contenedor drawer__dentro">
       <a href="#sobre-mi">Sobre Mí <small>01</small></a>
-      <a href="#enfoque">Enfoque <small>02</small></a>
-      <a href="#servicios">Servicios <small>03</small></a>
-      <a href="#proyectos">Proyectos <small>04</small></a>
-      <a href="#testimonios">Testimonios <small>05</small></a>
-      <a href="#faq">Preguntas frecuentes <small>06</small></a>
+      <a href="#servicios">Servicios <small>02</small></a>
+      <a href="#proyectos">Proyectos <small>03</small></a>
+      <a href="#testimonios">Testimonios <small>04</small></a>
+      <a href="#faq">Preguntas frecuentes <small>05</small></a>
       <a href="#reservar" class="boton">Reservar consulta</a>
       <a href="https://wa.me/34868353668" class="boton boton--linea" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg> WhatsApp +34 868 35 36 68</a>
     </div>
@@ -712,43 +701,12 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
   </div>
 </section>
 
-<section id="enfoque">
+<section id="servicios">
   <div class="contenedor">
     <div class="sec__cabecera revelar">
-      <div class="sec__indice"><span class="sec__num">01</span><p class="ojo">Mi enfoque</p></div>
+      <div class="sec__indice"><span class="sec__num">01</span><p class="ojo">Lo que hago</p></div>
       <div class="sec__titulos">
-        <h2>Así es como trabajo</h2>
-        <p>Tres principios simples que hacen que cada proyecto llegue a tiempo y funcione de verdad.</p>
-      </div>
-    </div>
-
-    <ol class="pilares">
-      <li class="pilar revelar">
-        <span class="pilar__num" aria-hidden="true">01</span>
-        <h3>Colaborativo</h3>
-        <p>Me sumerjo en tu visión desde el primer día. Trabajo como una extensión de tu equipo, no como un proveedor externo.</p>
-      </li>
-      <li class="pilar revelar" style="--retardo:.12s">
-        <span class="pilar__num" aria-hidden="true">02</span>
-        <h3>Iterativo</h3>
-        <p>Revisamos y afinamos en equipo hasta que el resultado refleja la identidad exacta de tu marca.</p>
-      </li>
-      <li class="pilar revelar" style="--retardo:.24s">
-        <span class="pilar__num" aria-hidden="true">03</span>
-        <h3>Auditado</h3>
-        <p>Coordino a especialistas, pero reviso cada entrega yo misma, con formación propia en programación e IA.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section id="servicios" class="sec--tintada">
-  <div class="contenedor">
-    <div class="sec__cabecera revelar">
-      <div class="sec__indice"><span class="sec__num">02</span><p class="ojo">Servicios</p></div>
-      <div class="sec__titulos">
-        <h2>Tres pilares, un solo proyecto</h2>
-        <p>Puedes contratarlos por separado, pero funcionan mejor juntos: la mayoría de webs que no venden fallan porque el diseño, el código y la estrategia comercial los hicieron tres personas que nunca hablaron entre sí.</p>
+        <h2>Servicios</h2>
       </div>
     </div>
 
@@ -796,7 +754,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
 <section id="proyectos" class="sec--tintada">
   <div class="contenedor">
     <div class="sec__cabecera revelar">
-      <div class="sec__indice"><span class="sec__num">03</span><p class="ojo">Casos de estudio</p></div>
+      <div class="sec__indice"><span class="sec__num">02</span><p class="ojo">Casos de estudio</p></div>
       <div class="sec__titulos">
         <h2>Proyectos y Casos Reales</h2>
         <p>Cada proyecto empieza con una conversación sobre el negocio, el diseño y la tecnología necesaria.</p>
@@ -847,7 +805,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
 <section id="testimonios">
   <div class="contenedor">
     <div class="sec__cabecera revelar">
-      <div class="sec__indice"><span class="sec__num">04</span><p class="ojo">Trayectoria &amp; Opiniones</p></div>
+      <div class="sec__indice"><span class="sec__num">03</span><p class="ojo">Trayectoria &amp; Opiniones</p></div>
       <div class="sec__titulos">
         <h2>Confianza que se construye con resultados</h2>
       </div>
@@ -923,7 +881,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
 <section id="faq">
   <div class="contenedor faq-layout">
     <div class="faq__aside revelar">
-      <div class="sec__indice sec__indice--fila"><span class="sec__num">05</span><p class="ojo">Preguntas frecuentes</p></div>
+      <div class="sec__indice sec__indice--fila"><span class="sec__num">04</span><p class="ojo">Preguntas frecuentes</p></div>
       <h2 class="sec__h2">Lo que todo el mundo pregunta</h2>
       <p>¿Te queda alguna duda? Escríbeme a <a href="mailto:parismimi888@gmail.com">parismimi888@gmail.com</a> y te respondo personalmente.</p>
     </div>
@@ -959,7 +917,6 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
         <h4>Navegación</h4>
         <ul>
           <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#enfoque">Enfoque</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
           <li><a href="#testimonios">Testimonios</a></li>
