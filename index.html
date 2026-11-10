@@ -165,11 +165,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .nav{ display:flex; align-items:center; justify-content:space-between; min-height:var(--alto-nav); gap:24px; }
 .nav__marca{ display:flex; align-items:center; gap:14px; }
 .nav__nombre{ display:block; font-family:var(--serif); font-size:1.5rem; letter-spacing:.24em; line-height:1.1; }
-.nav__lema{ display:block; white-space:nowrap; font-size:.56rem; font-weight:400; letter-spacing:.18em; color:var(--oliva-700); text-transform:uppercase; margin-top:4px; }
-.nav__enlaces{ display:flex; align-items:center; gap:clamp(18px,1.9vw,26px); }
+.nav__lema{ display:block; font-size:.56rem; font-weight:400; letter-spacing:.18em; color:var(--oliva-700); text-transform:uppercase; margin-top:4px; }
+.nav__enlaces{ display:flex; align-items:center; gap:clamp(14px,1.4vw,24px); }
 .nav__enlaces a:not(.boton){
   position:relative; font-size:.72rem; font-weight:400; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--gris); padding:6px 0; transition:color .25s ease;
+  color:var(--gris); padding:6px 0; white-space:nowrap; transition:color .25s ease;
 }
 .nav__enlaces a:not(.boton)::after{
   content:''; position:absolute; left:calc(50% - .07em); bottom:-3px; width:4px; height:4px; border-radius:50%;
@@ -178,6 +178,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .nav__enlaces a:not(.boton):hover, .nav__enlaces a.activo{ color:var(--charcoal); }
 .nav__enlaces a.activo::after{ transform:translateX(-50%) scale(1); }
 .nav__enlaces a.boton{ padding:13px calc(24px - .16em) 13px 24px; font-size:.7rem; }
+.nav__enlaces a.boton--redondo{ width:46px; height:46px; padding:0; flex-shrink:0; margin-left:calc(-1 * clamp(8px,1vw,14px)); }
+.boton--redondo .icono, .boton--redondo:hover .icono{ width:20px; height:20px; transform:none; }
+.drawer .boton + .boton{ margin-top:12px; }
 .nav__toggle{ display:none; align-items:center; justify-content:center; width:44px; height:44px; margin-right:-10px; background:none; border:none; cursor:pointer; color:var(--charcoal); border-radius:50%; }
 
 .drawer{ display:none; border-top:1px solid var(--crema-300); }
@@ -639,6 +642,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
   <symbol id="i-pie" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 1-8.5 12"/><line x1="12" y1="12" x2="12" y2="3"/><line x1="12" y1="12" x2="19.5" y2="7"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6V11c0 5-3 8-7 10-4-2-7-5-7-10V6Z"/><polyline points="8.5 12.2 10.7 14.4 15.3 9.4"/></symbol>
   <symbol id="i-calendar" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="14.5" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="8.5" y1="3.5" x2="8.5" y2="7"/><line x1="15.5" y1="3.5" x2="15.5" y2="7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 4h3l1.5 4-2 1.3a11 11 0 0 0 6.7 6.7L16 14l4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3.5 6a2 2 0 0 1 2-2Z"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></symbol>
 </svg>
 
@@ -661,6 +665,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
       <a href="#testimonios">Testimonios</a>
       <a href="#faq">FAQ</a>
       <a href="#reservar" class="boton">Reservar consulta</a>
+      <a href="https://wa.me/34868353668" class="boton boton--redondo" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp al +34 868 35 36 68"><svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg></a>
     </nav>
 
     <button class="nav__toggle" id="menu-btn" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menú">
@@ -678,6 +683,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
       <a href="#testimonios">Testimonios <small>06</small></a>
       <a href="#faq">Preguntas frecuentes <small>07</small></a>
       <a href="#reservar" class="boton">Reservar consulta</a>
+      <a href="https://wa.me/34868353668" class="boton boton--linea" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg> WhatsApp +34 868 35 36 68</a>
     </div>
   </nav>
 </header>
@@ -692,9 +698,9 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
       <p class="hero__texto revelar" style="--retardo:.16s">Diseño webs, automatizo procesos con IA y dirijo la imagen de marca de pequeños negocios que quieren verse — y venderse — mejor.</p>
 
       <ul class="hero__pilares revelar" style="--retardo:.24s">
-        <li><svg class="icono" aria-hidden="true"><use href="#i-code"/></svg><span>Desarrollo &amp;&nbsp;IA</span></li>
+        <li><svg class="icono" aria-hidden="true"><use href="#i-code"/></svg><span>Desarrollo&nbsp;web</span></li>
+        <li><svg class="icono" aria-hidden="true"><use href="#i-cpu"/></svg><span>Sistemas para&nbsp;empresas</span></li>
         <li><svg class="icono" aria-hidden="true"><use href="#i-trend"/></svg><span>Marketing</span></li>
-        <li><svg class="icono" aria-hidden="true"><use href="#i-palette"/></svg><span>Dirección de&nbsp;arte</span></li>
       </ul>
 
       <div class="hero__acciones revelar" style="--retardo:.32s">
