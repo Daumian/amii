@@ -502,6 +502,7 @@ fieldset{ border:0; margin:0; padding:0; min-width:0; }
   .enlace-atras.oculto{ display:none; }
 }
 .form-nota{ text-align:center; font-size:.76rem; color:var(--gris); margin-top:22px; }
+.form-nota--error{ color:var(--error); }
 
 .exito{ text-align:center; padding:20px 0 8px; animation:subir .6s var(--ease); }
 .exito .icono{ width:56px; height:56px; stroke-width:1.1; color:var(--oliva-700); margin:0 auto 22px; }
@@ -1084,15 +1085,48 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     c.addEventListener('input', function(){ if (c.closest('.campo').querySelector('.campo__error')) limpiarError(c); });
   });
 
+  // Envío por FormSubmit: llega al mail de destino
+  var destinoForm = 'https://formsubmit.co/ajax/parismimi888@gmail.com';
+  var btnEnviar = document.getElementById('btn-enviar');
+  var nota = document.getElementById('form-nota');
+  var textoNota = nota.textContent;
+
+  function valorDe(id){ return document.getElementById(id).value.trim(); }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if (!validarFormulario()){ return; }
-    form.hidden = true;
-    document.getElementById('form-nota').hidden = true;
-    var exito = document.getElementById('exito');
-    exito.hidden = false;
-    exito.scrollIntoView({ block:'center' });
-    exito.querySelector('h3').focus({ preventScroll:true });
+    btnEnviar.disabled = true;
+    nota.classList.remove('form-nota--error');
+    nota.textContent = 'Enviando…';
+
+    fetch(destinoForm, {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
+      body: JSON.stringify({
+        _subject: 'Nueva consulta web: ' + valorDe('f-nombre'),
+        _template: 'table',
+        'Qué necesita': valorDe('f-detalles'),
+        Nombre: valorDe('f-nombre'),
+        Empresa: valorDe('f-empresa') || '—',
+        email: valorDe('f-email'),
+        Teléfono: valorDe('f-tel')
+      })
+    }).then(function(r){
+      if (!r.ok){ throw new Error('HTTP ' + r.status); }
+      form.hidden = true;
+      nota.hidden = true;
+      var exito = document.getElementById('exito');
+      exito.hidden = false;
+      exito.scrollIntoView({ block:'center' });
+      exito.querySelector('h3').focus({ preventScroll:true });
+    }).catch(function(){
+      btnEnviar.disabled = false;
+      nota.classList.add('form-nota--error');
+      nota.textContent = 'No se pudo enviar. Prueba de nuevo o escríbeme por WhatsApp al +34 868 35 36 68.';
+    }).finally(function(){
+      if (!nota.classList.contains('form-nota--error') && !nota.hidden){ nota.textContent = textoNota; }
+    });
   });
 
   // Modal de proyectos
