@@ -732,7 +732,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
   <div class="contenedor">
     <div class="sobre-mi">
       <div class="sobre-mi__foto revelar">
-        <img src="2WhatsApp Image 2026-10-19 at 17.51.46.jpeg" alt="Espacio de trabajo boutique, diseño y desarrollo en proceso">
+        <img src="valentini-trabajando.jpg" alt="Valentini trabajando en el diseño de una web" loading="lazy">
       </div>
       <div class="sobre-mi__texto revelar" style="--retardo:.15s">
         <p class="ojo">Detrás de la marca</p>
@@ -871,7 +871,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
       <article class="proyecto revelar">
         <div class="proyecto__lienzo">
           <span class="proyecto__etiqueta">Desarrollo &amp; IA</span>
-          <img src="WhatsApp Image 2026-10-19 at 17.51.46.jpeg" alt="Desarrollo web y proyectos de Inteligencia Artificial">
+          <img src="escritorio-web.jpg" alt="Escritorio con una web en desarrollo en pantalla" loading="lazy">
         </div>
         <h3>Optimización de Presupuestos &amp; Web</h3>
         <p>Redujimos en un 40% el tiempo de gestión de presupuestos integrando una landing optimizada con flujos de IA.</p>
@@ -883,7 +883,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
       <article class="proyecto revelar" style="--retardo:.12s">
         <div class="proyecto__lienzo">
           <span class="proyecto__etiqueta">Marketing &amp; Comercial</span>
-          <img src="WhatsApp Image 2026-10-13 at 22.26.00.jpeg" alt="Estrategia de captación y embudo comercial">
+          <img src="mesa-te.jpg" alt="Mesa de trabajo con tablet, móvil y una taza de té" loading="lazy">
         </div>
         <h3>Estrategia de Captación &amp; Ads</h3>
         <p>Embudo de alta conversión en Meta &amp; LinkedIn con formulario calificador, aumentando los leads válidos en un 65%.</p>
@@ -895,7 +895,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
       <article class="proyecto revelar" style="--retardo:.24s">
         <div class="proyecto__lienzo">
           <span class="proyecto__etiqueta">Dirección de Arte</span>
-          <img src="WhatsApp Image 2026-10-13 at 22.17.12.jpeg" alt="Dirección de arte e identidad visual artesanal">
+          <img src="valentini-laptop.jpg" alt="Valentini revisando una identidad visual en el portátil" loading="lazy">
         </div>
         <h3>Identidad Visual &amp; Digital</h3>
         <p>Rediseño integral de marca con estética artesanal sofisticada y adaptación multicanal digital y física.</p>
@@ -920,7 +920,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     <!-- BLOQUE DE PONENCIA / CONFERENCIA DESTACADA -->
     <div class="eventos-grid revelar">
       <div class="evento__card">
-        <img src="00:03.jpg" alt="Conferencia Valentini - Construye tu camino">
+        <img src="valentini-trabajando.jpg" alt="Valentini trabajando" loading="lazy">
         <div class="evento__badge">Conferencias &amp; Formación · "Construye Tu Camino"</div>
       </div>
       <div>
@@ -956,7 +956,7 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     <div class="reservar__intro revelar">
       <div class="sec__indice sec__indice--fila"><p class="ojo">Reservar consulta</p></div>
       <h2 class="sec__h2">Cuéntame sobre tu proyecto</h2>
-      <p>Cinco preguntas rápidas. Si tu proyecto encaja, te llevo directamente a mi agenda para una sesión introductoria gratuita.</p>
+      <p>Cuéntame en pocas líneas qué necesitas y te escribo para agendar una sesión introductoria gratuita.</p>
       <ul class="reservar__garantias">
         <li><svg class="icono" aria-hidden="true"><use href="#i-calendar"/></svg> Videollamada de 30 minutos, gratuita</li>
         <li><svg class="icono" aria-hidden="true"><use href="#i-clock"/></svg> Respuesta en menos de 24 horas laborables</li>
@@ -965,62 +965,24 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     </div>
 
     <div class="form-tarjeta revelar" id="form-tarjeta" style="--retardo:.12s">
-      <div class="form-cabecera" id="form-cabecera">
-        <span id="paso-label" aria-live="polite">Paso 1 de 5</span>
-        <span id="paso-titulo">Empecemos por lo básico</span>
-      </div>
-      <div class="progreso" id="progreso" aria-hidden="true"><i class="hecho"></i><i></i><i></i><i></i><i></i></div>
-
       <form id="formulario" novalidate>
 
-        <div class="paso activo" data-paso="1">
-          <div class="campo-doble">
-            <div class="campo"><label for="f-nombre">Nombre completo *</label><input type="text" id="f-nombre" autocomplete="name" required aria-describedby="e-nombre"><p class="campo__error" id="e-nombre"></p></div>
-            <div class="campo"><label for="f-empresa">Empresa o proyecto *</label><input type="text" id="f-empresa" autocomplete="organization" required aria-describedby="e-empresa"><p class="campo__error" id="e-empresa"></p></div>
-          </div>
-          <div class="campo-doble">
-            <div class="campo"><label for="f-email">Correo electrónico *</label><input type="email" id="f-email" autocomplete="email" inputmode="email" required aria-describedby="e-email"><p class="campo__error" id="e-email"></p></div>
-            <div class="campo"><label for="f-tel">Teléfono / WhatsApp *</label><input type="tel" id="f-tel" autocomplete="tel" inputmode="tel" required aria-describedby="e-tel"><p class="campo__error" id="e-tel"></p></div>
-          </div>
+        <div class="campo">
+          <label for="f-detalles">¿Qué necesitas? *</label>
+          <textarea id="f-detalles" required aria-describedby="e-detalles" placeholder="Cuéntame brevemente tu negocio y qué te gustaría conseguir..."></textarea>
+          <p class="campo__error" id="e-detalles"></p>
         </div>
-
-        <fieldset class="paso" data-paso="2">
-          <legend class="leyenda">¿En qué pilar necesitas ayuda principal? *</legend>
-          <label class="opcion"><input type="radio" name="pilar" value="dev_ia" checked><span><strong>Desarrollo Web &amp; IA</strong><span class="desc">Webs rápidas, captación y automatizaciones.</span></span></label>
-          <label class="opcion"><input type="radio" name="pilar" value="marketing"><span><strong>Marketing &amp; Comercial</strong><span class="desc">Ads, embudos de ventas y rentabilidad.</span></span></label>
-          <label class="opcion"><input type="radio" name="pilar" value="arte"><span><strong>Dirección de Arte &amp; Artesanía</strong><span class="desc">Identidad visual premium y diseño.</span></span></label>
-          <label class="opcion"><input type="radio" name="pilar" value="integral"><span><strong>Proyecto Integral 360°</strong><span class="desc">Estrategia, diseño y desarrollo completo.</span></span></label>
-        </fieldset>
-
-        <fieldset class="paso" data-paso="3">
-          <legend class="leyenda">¿Cuál es tu rango de presupuesto aproximado? *</legend>
-          <label class="opcion"><input type="radio" name="presupuesto" value="bajo"><span><strong>Hasta 1.500 €</strong><span class="desc">Landing page o asesoría puntual.</span></span></label>
-          <label class="opcion"><input type="radio" name="presupuesto" value="medio" checked><span><strong>1.500 € – 3.000 €</strong><span class="desc">Web optimizada + automatizaciones o campaña.</span></span></label>
-          <label class="opcion"><input type="radio" name="presupuesto" value="alto"><span><strong>Más de 3.000 €</strong><span class="desc">Proyecto integral 360°: branding + web + IA.</span></span></label>
-        </fieldset>
-
-        <div class="paso" data-paso="4">
-          <div class="campo">
-            <label for="f-plazo">¿Para cuándo necesitas tener el proyecto listo? *</label>
-            <select id="f-plazo">
-              <option value="urgente">Lo antes posible (1–2 semanas)</option>
-              <option value="estandar" selected>En un plazo razonable (2–4 semanas)</option>
-              <option value="planificado">Planificando el próximo trimestre (4–8 semanas)</option>
-            </select>
-          </div>
+        <div class="campo-doble">
+          <div class="campo"><label for="f-nombre">Nombre completo *</label><input type="text" id="f-nombre" autocomplete="name" required aria-describedby="e-nombre"><p class="campo__error" id="e-nombre"></p></div>
+          <div class="campo"><label for="f-empresa">Empresa o proyecto</label><input type="text" id="f-empresa" autocomplete="organization" aria-describedby="e-empresa"><p class="campo__error" id="e-empresa"></p></div>
         </div>
-
-        <div class="paso" data-paso="5">
-          <div class="campo">
-            <label for="f-detalles">Detalles sobre el reto o tu negocio actual</label>
-            <textarea id="f-detalles" placeholder="Cuéntame brevemente tu situación actual y qué te gustaría conseguir..."></textarea>
-          </div>
+        <div class="campo-doble">
+          <div class="campo"><label for="f-email">Correo electrónico *</label><input type="email" id="f-email" autocomplete="email" inputmode="email" required aria-describedby="e-email"><p class="campo__error" id="e-email"></p></div>
+          <div class="campo"><label for="f-tel">Teléfono / WhatsApp *</label><input type="tel" id="f-tel" autocomplete="tel" inputmode="tel" required aria-describedby="e-tel"><p class="campo__error" id="e-tel"></p></div>
         </div>
 
         <div class="form-acciones">
-          <button type="button" class="enlace-atras oculto" id="btn-atras"><svg class="icono" aria-hidden="true"><use href="#i-arrow"/></svg> Anterior</button>
-          <button type="button" class="boton" id="btn-siguiente">Continuar <svg class="icono" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-          <button type="submit" class="boton" id="btn-enviar" hidden>Enviar solicitud</button>
+          <button type="submit" class="boton" id="btn-enviar">Enviar solicitud <svg class="icono" aria-hidden="true"><use href="#i-arrow"/></svg></button>
         </div>
       </form>
 
@@ -1193,21 +1155,10 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     document.querySelectorAll('.revelar').forEach(function(el){ el.classList.add('visible'); });
   }
 
-  // Formulario por pasos
-  var pasoActual = 1;
-  var totalPasos = 5;
-  var titulos = ['Empecemos por lo básico','Pilar de interés','Presupuesto estimado','Plazo de entrega','Detalles del proyecto'];
+  // Formulario
   var reEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
   var form = document.getElementById('formulario');
-  var tarjeta = document.getElementById('form-tarjeta');
-  var pasos = document.querySelectorAll('.paso');
-  var segmentos = document.querySelectorAll('#progreso i');
-  var pasoLabel = document.getElementById('paso-label');
-  var pasoTitulo = document.getElementById('paso-titulo');
-  var btnAtras = document.getElementById('btn-atras');
-  var btnSiguiente = document.getElementById('btn-siguiente');
-  var btnEnviar = document.getElementById('btn-enviar');
 
   function marcarError(campo, mensaje){
     var contenedor = campo.closest('.campo');
@@ -1221,13 +1172,13 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     campo.removeAttribute('aria-invalid');
   }
 
-  function validarPaso1(){
+  function validarFormulario(){
     var primero = null;
-    ['f-nombre','f-empresa','f-email','f-tel'].forEach(function(id){
+    ['f-detalles','f-nombre','f-email','f-tel'].forEach(function(id){
       var c = document.getElementById(id);
       var valor = c.value.trim();
       var mensaje = '';
-      if (!valor){ mensaje = 'Completa este campo para continuar.'; }
+      if (!valor){ mensaje = 'Completa este campo para enviar.'; }
       else if (c.type === 'email' && !reEmail.test(valor)){ mensaje = 'Revisa el formato del correo electrónico.'; }
       if (mensaje){ marcarError(c, mensaje); if (!primero) primero = c; }
       else { limpiarError(c); }
@@ -1235,39 +1186,14 @@ footer{ background:var(--oliva-900); color:#CFD5CA; padding:clamp(64px,9vw,104px
     if (primero){ primero.focus(); return false; }
     return true;
   }
-  document.querySelectorAll('[data-paso="1"] input').forEach(function(c){
-    c.addEventListener('input', function(){ limpiarError(c); });
-  });
-
-  function mostrarPaso(n){
-    pasos.forEach(function(p){ p.classList.toggle('activo', Number(p.dataset.paso) === n); });
-    segmentos.forEach(function(s, i){ s.classList.toggle('hecho', i < n); });
-    pasoLabel.textContent = 'Paso ' + n + ' de ' + totalPasos;
-    pasoTitulo.textContent = titulos[n - 1];
-    btnAtras.classList.toggle('oculto', n === 1);
-    btnSiguiente.hidden = n === totalPasos;
-    btnEnviar.hidden = n !== totalPasos;
-    if (tarjeta.getBoundingClientRect().top < 0){ tarjeta.scrollIntoView({ block:'start' }); }
-  }
-
-  function avanzar(){
-    if (pasoActual === 1 && !validarPaso1()){ return; }
-    pasoActual = Math.min(totalPasos, pasoActual + 1);
-    mostrarPaso(pasoActual);
-  }
-
-  btnSiguiente.addEventListener('click', avanzar);
-  btnAtras.addEventListener('click', function(){
-    pasoActual = Math.max(1, pasoActual - 1);
-    mostrarPaso(pasoActual);
+  form.querySelectorAll('input, textarea').forEach(function(c){
+    c.addEventListener('input', function(){ if (c.closest('.campo').querySelector('.campo__error')) limpiarError(c); });
   });
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    if (pasoActual < totalPasos){ avanzar(); return; }
+    if (!validarFormulario()){ return; }
     form.hidden = true;
-    document.getElementById('progreso').hidden = true;
-    document.getElementById('form-cabecera').hidden = true;
     document.getElementById('form-nota').hidden = true;
     var exito = document.getElementById('exito');
     exito.hidden = false;
