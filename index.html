@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="VALENTINI | Webs, sistemas y marketing para negocios">
 <meta property="og:description" content="Webs, sistemas y marketing para negocios, con un solo contacto profesional. Coordino a los mejores especialistas para que tu proyecto quede bien hecho y bonito, sin que tengas que preocuparte.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='8' fill='%23F6F3ED' stroke='%23A97C5B' stroke-width='3'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='34' text-anchor='middle' fill='%23A97C5B'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="rama-oscura.png">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -25,7 +25,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=GFS+Didot&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 /* ======================================================================
@@ -589,6 +589,12 @@ body{ font-weight:400; font-size:1.0625rem; }
 .wa-flotante .icono{ width:28px; height:28px; }
 .wa-flotante:focus-visible{ outline:3px solid var(--oliva-900); outline-offset:3px; }
 @media print{ .wa-flotante{ display:none; } }
+
+/* Logo: rama + VALENTINI en GFS Didot, como la tarjeta */
+.rama{ height:40px; width:auto; flex-shrink:0; }
+.nav__nombre, .pie__marca{ font-family:'GFS Didot', var(--serif); }
+.pie__marca .rama{ height:44px; }
+@media (max-width:560px){ .rama{ height:34px; } }
 </style>
 </head>
 <body>
@@ -639,7 +645,7 @@ body{ font-weight:400; font-size:1.0625rem; }
 <header class="cabecera" id="cabecera">
   <div class="contenedor nav">
     <a href="#inicio" class="nav__marca" aria-label="VALENTINI, volver al inicio">
-      <span class="sello" aria-hidden="true">V</span>
+      <img class="rama" src="rama-oscura.png" alt="" width="22" height="40">
       <span>
         <span class="nav__nombre">VALENTINI</span>
         <span class="nav__lema">Webs · Sistemas · Marketing</span>
@@ -652,7 +658,7 @@ body{ font-weight:400; font-size:1.0625rem; }
       <a href="#testimonios">Clientes</a>
       <a href="#faq">FAQ</a>
       <a href="#reservar" class="boton">Reservar consulta</a>
-      <a href="https://wa.me/34868353668?text=Hola%20Valentini%2C%20vengo%20desde%20la%20web%20y%20me%20gustar%C3%ADa%20hacer%20una%20consulta." class="boton boton--redondo" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp al +34 868 35 36 68"><svg class="icono" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+      <a href="https://wa.me/34868353668?text=Hola%20Valentini%2C%20vengo%20desde%20la%20web%20y%20me%20gustar%C3%ADa%20hacer%20una%20consulta." class="boton boton--redondo" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp al +34 868 353 668"><svg class="icono" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
     </nav>
 
     <button class="nav__toggle" id="menu-btn" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menú">
@@ -667,7 +673,7 @@ body{ font-weight:400; font-size:1.0625rem; }
       <a href="#testimonios">Clientes <small>03</small></a>
       <a href="#faq">Preguntas frecuentes <small>04</small></a>
       <a href="#reservar" class="boton">Reservar consulta</a>
-      <a href="https://wa.me/34868353668?text=Hola%20Valentini%2C%20vengo%20desde%20la%20web%20y%20me%20gustar%C3%ADa%20hacer%20una%20consulta." class="boton boton--linea" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#i-whatsapp"/></svg> WhatsApp +34 868 35 36 68</a>
+      <a href="https://wa.me/34868353668?text=Hola%20Valentini%2C%20vengo%20desde%20la%20web%20y%20me%20gustar%C3%ADa%20hacer%20una%20consulta." class="boton boton--linea" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#i-whatsapp"/></svg> WhatsApp +34 868 353 668</a>
     </div>
   </nav>
 </header>
@@ -905,7 +911,7 @@ body{ font-weight:400; font-size:1.0625rem; }
   <div class="contenedor">
     <div class="pie">
       <div>
-        <div class="pie__marca"><span class="sello" aria-hidden="true">V</span>VALENTINI</div>
+        <div class="pie__marca"><img class="rama" src="rama-clara.png" alt="" width="22" height="40">VALENTINI</div>
         <div class="pie__lema">Webs<br>Sistemas<br>Marketing</div>
         <p class="pie__ubi">Murcia, España · En remoto</p>
       </div>
@@ -921,7 +927,7 @@ body{ font-weight:400; font-size:1.0625rem; }
       <div>
         <h4>Contacto</h4>
         <ul>
-          <li><a href="tel:+34868353668">Llamar: (+34) 868 35 36 68</a></li>
+          <li><a href="tel:+34868353668">Llamar: (+34) 868 353 668</a></li>
           <li><a href="https://wa.me/34868353668?text=Hola%20Valentini%2C%20vengo%20desde%20la%20web%20y%20me%20gustar%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp directo</a></li>
           <li><a href="#reservar">Reservar consulta</a></li>
         </ul>
@@ -1073,7 +1079,7 @@ body{ font-weight:400; font-size:1.0625rem; }
     }).catch(function(){
       btnEnviar.disabled = false;
       nota.classList.add('form-nota--error');
-      nota.textContent = 'No se pudo enviar. Prueba de nuevo o escríbeme por WhatsApp al +34 868 35 36 68.';
+      nota.textContent = 'No se pudo enviar. Prueba de nuevo o escríbeme por WhatsApp al +34 868 353 668.';
     }).finally(function(){
       if (!nota.classList.contains('form-nota--error') && !nota.hidden){ nota.textContent = textoNota; }
     });
